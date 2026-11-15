@@ -1,13 +1,19 @@
-# Kho Lưu Trữ Đề Bài Competitive Programming
+# Danh sách bài tập
 
-Chào mừng đến với hệ thống lưu trữ đề bài lập trình thi đấu. Các bài toán được chuẩn hóa định dạng Input/Output, ràng buộc Subtask và ví dụ minh họa.
+<input type="text" id="problemSearch" onkeyup="filterProblems()" placeholder="Tìm kiếm mã bài, tên bài hoặc dạng bài..." style="width: 100%; padding: 10px 14px; margin-bottom: 16px; border: 1px solid var(--md-default-fg-color--lighter); border-radius: 6px; background: var(--md-default-bg-color); color: var(--md-default-fg-color); font-size: 0.95rem;">
 
-## Danh mục bài tập
+{{ render_problem_table() }}
 
-{{ problem_tabs() }}
-
-## Quy ước chung
-
-* **Ngôn ngữ chấm:** C++14 / C++17 (trình biên dịch GCC).
-* **Luồng vào/ra:** Đọc từ đầu vào chuẩn (`stdin`) và ghi ra đầu ra chuẩn (`stdout`), trừ khi đề bài chỉ định tệp riêng.
-* **Ký hiệu:** Các biến số, công thức và ràng buộc được biểu diễn bằng ký hiệu toán học chuẩn (ví dụ: $1 \le N \le 10^5$).
+<script>
+function filterProblems() {
+  const input = document.getElementById("problemSearch");
+  const filter = input.value.toLowerCase();
+  const table = document.querySelector(".md-typeset table");
+  if (!table) return;
+  const trs = table.querySelectorAll("tbody tr");
+  trs.forEach(tr => {
+    const text = tr.textContent.toLowerCase();
+    tr.style.display = text.includes(filter) ? "" : "none";
+  });
+}
+</script>

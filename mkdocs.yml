@@ -1,56 +1,37 @@
-site_name: Kho Đề Bài Lập Trình Thi Đấu
-site_description: Lưu trữ đề bài, phân tích và lời giải Competitive Programming
-# Thay bằng đường dẫn thực tế của bạn sau khi tạo repo GitHub:
-site_url: https://<KVan-TC>.github.io/<my-problems>/
-
+site_name: Kho Bài Tập Lập Trình Thi Đấu
 theme:
   name: material
   language: vi
   palette:
-    # Chế độ sáng
     - scheme: default
       primary: indigo
-      accent: blue
+      accent: indigo
       toggle:
         icon: material/brightness-7
-        name: Chuyển sang chế độ tối
-    # Chế độ tối
+        name: Chuyển sang giao diện tối
     - scheme: slate
       primary: indigo
-      accent: blue
+      accent: indigo
       toggle:
         icon: material/brightness-4
-        name: Chuyển sang chế độ sáng
+        name: Chuyển sang giao diện sáng
   features:
     - navigation.instant
-    - navigation.tracking
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - content.code.copy
-    - content.tabs.link
     - search.suggest
     - search.highlight
+    - content.code.copy
 
 plugins:
   - search
-  - awesome-nav
   - macros
 
 markdown_extensions:
-  - admonition
-  - tables
-  - footnotes
-  - attr_list
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - tables
 
 extra_javascript:
   - javascripts/mathjax.js

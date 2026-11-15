@@ -1,60 +1,59 @@
 import os
-import yaml
-from collections import defaultdict
+import re
 
 def define_env(env):
     @env.macro
-    def problem_tabs():
-        problems_dir = os.path.join(env.project_dir, "docs", "problems")
-        all_rows = []
-        tag_groups = defaultdict(list)
+    def render_problem_table():
+        problems_dir = os.path.join(env.project_dir, 'docs', 'problems')
+        if not os.path.exists(problems_dir):
+            return "*Chưa có bài tập nào.*"
 
-        if os.path.exists(problems_dir):
-            for root, _, files in os.walk(problems_dir):
-                for file in sorted(files):
-                    if not file.endswith(".md"):
-                        continue
-                    filepath = os.path.join(root, file)
-                    rel_path = os.path.relpath(filepath, os.path.join(env.project_dir, "docs")).replace("\\", "/")
+        rows = []
+        for filename in sorted(os.listdir(problems_dir)):
+            if not filename.endswith('.md') or filename == 'index.md':
+                continue
 
-                    meta = {}
-                    with open(filepath, "r", encoding="utf-8") as f:
-                        content = f.read()
-                        if content.startswith("---"):
-                            parts = content.split("---", 2)
-                            if len(parts) >= 3:
-                                meta = yaml.safe_load(parts[1]) or {}
+            filepath = os.path.join(problems_dir, filename)
+            with open(filepath, 'r', encoding='utf-8') as f:
+                content = f.read()
 
-                    code = meta.get("code", file[:-3])
-                    title = meta.get("title", code)
-                    raw_tags = meta.get("tags", "")
-                    limits = meta.get("limits", "1.0s / 256MB")
+            slug = filename[:-3]
+            code = slug
+            title = slug
 
-                    if isinstance(raw_tags, str):
-                        tags_list = [t.strip() for t in raw_tags.split(",") if t.strip()]
-                    elif isinstance(raw_tags, list):
-                        tags_list = [str(t).strip() for t in raw_tags if str(t).strip()]
-                    else:
-                        tags_list = []
+            # 1. Lấy Mã bài và Tên bài từ dòng tiêu đề H1 (# CODE - Title hoặc # Title)
+            h1_match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
+            if h1_match:
+                h1_text = h1_match.group(1).strip()
+                if ' - ' in h1_text:
+                    code, title = [x.strip() for x in h1_text.split(' - ', 1)]
+                elif ' – ' in h1_text:
+                    code, title = [x.strip() for x in h1_text.split(' – ', 1)]
+                else:
+                    title = h1_text
 
-                    tags_display = ", ".join(tags_list) if tags_list else "-"
-                    row_str = f"    | [{code}]({rel_path}) | {title} | {tags_display} | {limits} |"
+            # 2. Lấy Thời gian, Bộ nhớ, Dạng bài / Tags từ các dòng metadata trong đề
+            time_match = re.search(r'(?:Giới hạn thời gian|Time limit)[^:\n]*:\s*\**\s*([^\n*]+)', content, re.IGNORECASE)
+            mem_match = re.search(r'(?:Giới hạn bộ nhớ|Memory limit)[^:\n]*:\s*\**\s*([^\n*]+)', content, re.IGNORECASE)
+            tag_match = re.search(r'(?:Dạng bài|Tags?|Chủ đề)[^:\n]*:\s*\**\s*([^\n*]+)', content, re.IGNORECASE)
 
-                    all_rows.append(row_str)
-                    for tag in tags_list:
-                        tag_groups[tag].append(row_str)
+            time_limit = time_match.group(1).strip() if time_match else "1.0s"
+            memory_limit = mem_match.group(1).strip() if mem_match else "256MB"
 
-        header = [
-            "    | Mã bài | Tên bài | Chủ đề (Tags) | Giới hạn |",
-            "    | :--- | :--- | :--- | :--- |"
-        ]
+            if tag_match:
+                raw_tags = [t.strip() for t in tag_match.group(1).split(',') if t.strip()]
+                tags_str = ', '.join(f"`{t}`" for t in raw_tags)
+            else:
+                tags_str = ""
 
-        output = ['=== "Tất cả"'] + header + all_rows + [""]
+            link = f"problems/{slug}/"
+            rows.append(f"| [**{code}**]({link}) | [{title}]({link}) | {tags_str} | {time_limit} | {memory_limit} |")
 
-        for tag in sorted(tag_groups.keys()):
-            output.append(f'=== "{tag}"')
-            output.extend(header)
-            output.extend(tag_groups[tag])
-            output.append("")
+        if not rows:
+            return "*Chưa có bài tập nào.*"
 
-        return "\n".join(output)
+        header = (
+            "| Mã bài | Tên bài | Dạng bài | Thời gian | Bộ nhớ |\n"
+            "| :--- | :--- | :--- | :---: | :---: |\n"
+        )
+        return header + "\n".join(rows)
