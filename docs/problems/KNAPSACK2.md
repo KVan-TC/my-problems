@@ -1,8 +1,12 @@
-# KNAPSACK2 - Cái túi 2
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $1024$ MB
-* **Tags:** `dp`
+---
+code: KNAPSACK2
+title: Atcoder Educational DP Contest E - Knapsack 2
+time_limit: 1.0s
+memory_limit: 1024MB
+tags:
+    - dp
+submit_url: https://oj.vnoi.info/problem/atcoder_dp_e
+---
 
 Có $N$ đồ vật được đánh số từ $1$ đến $N$. Với mỗi $i$ ($1 \le i \le N$), đồ vật thứ $i$ có trọng lượng là $w_i$ và giá trị là $v_i$.
 

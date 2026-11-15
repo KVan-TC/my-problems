@@ -1,8 +1,13 @@
-# MAXSUM2 - Tổng đoạn con lớn nhất 2
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $512$ MB
-* **Tags:** `dp`, `prefix-sums`
+---
+code: MAXSUM2
+title: Tổng đoạn con lớn nhất 2
+time_limit: 1.0s
+memory_limit: 512MB
+tags:
+    - dp
+    - prefix-sums
+submit_url: https://cses.fi/problemset/task/1644
+---
 
 Cho một dãy số nguyên $x_1, x_2, \dots, x_n$ gồm $n$ phần tử và hai số nguyên dương $a, b$. Một đoạn con liên tiếp hợp lệ của dãy là một dãy các phần tử liên tiếp $x_l, x_{l+1}, \dots, x_r$ ($1 \le l \le r \le n$) có độ dài nằm trong đoạn $[a, b]$, tức là thỏa mãn $a \le r - l + 1 \le b$.
 

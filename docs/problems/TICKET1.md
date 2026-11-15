@@ -1,8 +1,12 @@
-# TICKET - MUA VÉ
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $256$ MB
-* **Tags:** `dp`
+---
+code: TICKET1
+title: Mua vé 1
+time_limit: 1.0s
+memory_limit: 256MB
+tags:
+    - dp
+submit_url:
+---
 
 Có $n$ người xếp thành một hàng dọc để mua vé, được đánh số từ $1$ đến $n$ theo thứ tự từ đầu hàng đến cuối hàng. Mỗi người cần mua đúng $1$ vé, và quầy bán vé cho phép mỗi người mua tối đa $2$ vé.
 

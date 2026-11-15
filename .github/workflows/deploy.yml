@@ -1,22 +1,33 @@
-name: Deploy GitHub Pages
-
+name: Build and Deploy MkDocs
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: write
 
 jobs:
-  deploy:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - name: Install dependencies
-        run: pip install mkdocs-material mkdocs-macros-plugin
+        run: |
+          pip install mkdocs-material mkdocs-macros-plugin pyyaml
+
+      - name: Validate & Build Site (Strict Mode)
+        run: |
+          mkdocs build --strict
+
       - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          mkdocs gh-deploy --force

@@ -1,8 +1,12 @@
-# LINEUP3 - Giao lưu 3
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $256$ MB
-* **Tags:** `dp`
+---
+code: LINEUP3
+title: Giao lưu 3
+time_limit: 1.0s
+memory_limit: 1024MB
+tags:
+    - dp
+submit_url:
+---
 
 Có $n$ học sinh (gồm cả nam và nữ) được xếp thành một hàng dọc và đánh số từ $1$ đến $n$. Cho một số nguyên không âm $k$, một cách xếp hàng được gọi là *hợp lệ* nếu giữa hai bạn nam bất kỳ trong hàng có ít nhất $k$ bạn nữ đứng ngăn cách giữa họ. Hai cách xếp hàng được coi là khác nhau nếu tồn tại ít nhất một vị trí có giới tính của học sinh đứng ở vị trí đó khác nhau.
 

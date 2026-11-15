@@ -1,8 +1,12 @@
-# TICKET2 - Mua vé 2
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $256$ MB
-* **Tags:** `dp`
+---
+code: TICKET2
+title: Mua vé 2
+time_limit: 1.0s
+memory_limit: 256MB
+tags:
+    - dp
+submit_url:
+---
 
 Bạn đã lên kế hoạch đi tàu trước cho $n$ ngày. Danh sách đó được thể hiện dưới mảng $d$, trong đó nếu $d_i = 1$ thì bạn cần đi tàu vào ngày thứ $i$, còn $d_i = 0$ nếu không cần. Vé tàu được bán theo ba cách khác nhau:
 

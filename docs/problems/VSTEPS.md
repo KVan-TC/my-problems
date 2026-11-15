@@ -1,8 +1,12 @@
-# VSTEPS - Bậc thang
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $256$ MB
-* **Tags:** `dp`
+---
+code: VSTEPS
+title: Bậc thang
+time_limit: 1.0s
+memory_limit: 256MB
+tags:
+    - dp
+submit_url: https://vn.spoj.com/problems/VSTEPS/
+---
 
 Bờm chơi trò chơi điện tử Lucky Luke đến màn phải điều khiển Lucky leo lên một cầu thang gồm $n$ bậc.
 

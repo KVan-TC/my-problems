@@ -1,8 +1,12 @@
-# TILING1 - LÁT GẠCH 1
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $256$ MB
-* **Tags:** `dp`
+---
+code: TILING1
+title: Lát gạch 1
+time_limit: 1.0s
+memory_limit: 256MB
+tags:
+    - dp
+submit_url:
+---
 
 Cho $q$ truy vấn, mỗi truy vấn cung cấp một số nguyên dương $n$ tương ứng với một bảng lưới chữ nhật kích thước $2 \times n$ gồm $2$ hàng và $n$ cột. Ta có vô số các viên gạch hình chữ nhật thuộc hai loại kích thước: $1 \times 2$ (đặt ngang) và $2 \times 1$ (đặt dọc).
 

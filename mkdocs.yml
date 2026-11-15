@@ -1,25 +1,31 @@
-site_name: Kho Bài Tập Lập Trình Thi Đấu
+site_name: My Problems
+site_url: https://kvan-tc.github.io/my-problems/
+
 theme:
   name: material
   language: vi
+  font:
+    text: Inter
+    code: JetBrains Mono
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: indigo
-      accent: indigo
+      accent: blue
       toggle:
         icon: material/brightness-7
-        name: Chuyển sang giao diện tối
-    - scheme: slate
+        name: Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: indigo
-      accent: indigo
+      accent: light-blue
       toggle:
         icon: material/brightness-4
-        name: Chuyển sang giao diện sáng
+        name: Light mode
   features:
-    - navigation.instant
-    - search.suggest
-    - search.highlight
     - content.code.copy
+    - navigation.instant
+    - navigation.top
 
 plugins:
   - search
@@ -31,8 +37,18 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.superfences
-  - tables
+  - pymdownx.details
+  - admonition
+  - attr_list
+  - md_in_html
+
+extra_css:
+  - stylesheets/vnoj-theme.css
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/vnoj-ui.js
+
+nav:
+  - Danh sách bài tập: index.md

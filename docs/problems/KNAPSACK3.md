@@ -1,8 +1,12 @@
-# KNAPSACK3 - Cái túi 3
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $1024$ MB
-* **Tags:** `dp`
+---
+code: KNAPSACK3
+title: Bài toán cái túi
+time_limit: 1.0s
+memory_limit: 1024MB
+tags:
+    - dp
+submit_url:
+---
 
 Cho $N$ loại đồ vật và một chiếc túi có sức chứa tối đa là $W$. Mỗi đồ vật thuộc loại thứ $i$ ($1 \le i \le N$) có trọng lượng $w_i$, giá trị $v_i$, và có sẵn đúng $c_i$ chiếc.
 

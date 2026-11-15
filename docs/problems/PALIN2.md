@@ -1,8 +1,13 @@
-# PALIN2 - Xâu đối xứng 2
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $1024$ MB
-* **Tags:** `dp`, `strings`
+---
+code: PALIN2
+title: Xâu đối xứng 2
+time_limit: 1.0s
+memory_limit: 1024MB
+tags:
+    - dp
+    - strings
+submit_url:
+---
 
 Cho một số nguyên dương $k$ và một xâu ký tự $s$ chỉ gồm các chữ cái tiếng Anh in thường. Ở mỗi thao tác, bạn được phép chọn một vị trí bất kỳ trong xâu $s$ và thay đổi ký tự tại vị trí đó thành một chữ cái tiếng Anh in thường khác.
 

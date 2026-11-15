@@ -1,8 +1,12 @@
-# FIBONACCI - Số Fibonacci
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $256$ MB
-* **Tags:** `dp`
+---
+code: FIBONACCI
+title: Số Fibonacci
+time_limit: 1.0s
+memory_limit: 1024MB
+tags:
+    - dp
+submit_url:
+---
 
 Dãy số Fibonacci $f_1, f_2, f_3, \dots$ được định nghĩa như sau:
 

@@ -1,8 +1,14 @@
-# EVENAVG - Trung bình cộng chẵn
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $256$ MB
-* **Tags:** `math`, `prefix-sum`, `two-pointers`
+---
+code: EVENAVG
+title: Trung bình cộng chẵn
+time_limit: 1.0s
+memory_limit: 256MB
+tags:
+    - math
+    - prefix-sum
+    - two-pointers
+submit_url:
+---
 
 Một cửa hàng tạp hóa ghi sổ thu chi từng ngày và khai với bên thuế rằng mức lãi trung bình mỗi ngày của cửa hàng là $K$. Bên thuế cử hai cán bộ đến kiểm kê. Mỗi đợt kiểm kê, hai người lấy một số chẵn ngày liên tiếp trong sổ, mỗi người xem một nửa số ngày đó, và đợt nào có trung bình cộng đúng bằng mức khai thì coi là khớp sổ.
 

@@ -1,8 +1,13 @@
-# MAXSUM - Tổng đoạn con lớn nhất
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $512$ MB
-* **Tags:** `dp`, `prefix-sums`
+---
+code: MAXSUM
+title: Tổng đoạn con lớn nhất
+time_limit: 1.0s
+memory_limit: 512MB
+tags:
+    - dp
+    - prefix-sums
+submit_url: https://cses.fi/problemset/task/1643
+---
 
 Cho một dãy số nguyên $x_1, x_2, \dots, x_n$ gồm $n$ phần tử. Một đoạn con liên tiếp khác rỗng của dãy là một dãy gồm các phần tử liên tiếp $x_l, x_{l+1}, \dots, x_r$ với $1 \le l \le r \le n$.
 

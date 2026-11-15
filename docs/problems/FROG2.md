@@ -1,8 +1,12 @@
-# B. FROG 2
-
-* **Giới hạn thời gian:** $2.0$ giây
-* **Giới hạn bộ nhớ:** $1024$ MB
-* **Tags:** `dp`
+---
+code: FROG2
+title: Atcoder Educational DP Contest B - Frog 2
+time_limit: 1.0s
+memory_limit: 1024MB
+tags:
+    - dp
+submit_url: https://oj.vnoi.info/problem/atcoder_dp_b
+---
 
 Có $N$ hòn đá được đánh số từ $1$ đến $N$. Với mỗi $i$ ($1 \le i \le N$), độ cao của hòn đá thứ $i$ là $h_i$.
 

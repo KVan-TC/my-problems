@@ -1,8 +1,13 @@
-# PALIN1 - Xâu đối xứng 1
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $1024$ MB
-* **Tags:** `dp`, `strings`
+---
+code: PALIN1
+title: Xâu đối xứng 1
+time_limit: 1.0s
+memory_limit: 1024MB
+tags:
+    - dp
+    - strings
+submit_url:
+---
 
 Cho một xâu ký tự $s$ chỉ gồm các chữ cái tiếng Anh in thường. Ở mỗi thao tác, bạn được phép chèn một ký tự tiếng Anh in thường bất kỳ vào một vị trí tùy ý trong xâu $s$ (ở đầu, ở cuối hoặc xen giữa hai ký tự liên tiếp).
 

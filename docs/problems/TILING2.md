@@ -1,8 +1,12 @@
-# TILING2 - LÁT GẠCH 2
-
-* **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $256$ MB
-* **Tags:** `dp`
+---
+code: TILING2
+title: Lát gạch 2
+time_limit: 1.0s
+memory_limit: 256MB
+tags:
+    - dp
+submit_url:
+---
 
 Cho một bảng lưới chữ nhật kích thước $2 \times n$ gồm $2$ hàng và $n$ cột. Ta có vô số các viên gạch thuộc ba loại kích thước: $1 \times 1$, $2 \times 1$ và $1 \times 2$.
 
