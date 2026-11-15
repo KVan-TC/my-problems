@@ -1,8 +1,7 @@
 # FROG 1
 
-* **Nguồn:** VNOJ — AtCoder Educational DP Contest (Bài A: Frog 1)
 * **Giới hạn thời gian:** $1.0$ giây
-* **Giới hạn bộ nhớ:** $256$ MB
+* **Giới hạn bộ nhớ:** $1024$ MB
 * **Tags:** `dp`
 
 Có $N$ hòn đá được đánh số từ $1$ đến $N$. Với mỗi $i$ ($1 \le i \le N$), độ cao của hòn đá thứ $i$ là $h_i$.
@@ -15,8 +14,8 @@ Nếu chú ếch hiện đang ở hòn đá $i$, chú có thể nhảy đến h�
 
 ## Input
 
-* Dòng đầu tiên chứa một số nguyên $N$ ($2 \le N \le 10^5$).
-* Dòng thứ hai chứa $N$ số nguyên $h_1, h_2, \dots, h_N$ ($1 \le h_i \le 10^4$).
+* Dòng đầu tiên chứa một số nguyên $N$ ($2 \le N \le 10^6$).
+* Dòng thứ hai chứa $N$ số nguyên $h_1, h_2, \dots, h_N$ ($1 \le h_i \le 10^9$).
 
 ## Output
 
